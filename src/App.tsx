@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 
+import { ShoppingCartContextProvider } from './contexts/ShoppingCartContext'
 import { Router } from './Router'
 
 import { lightTheme } from './styles/themes/light'
@@ -10,7 +11,9 @@ export function App() {
   return (
     <ThemeProvider theme={lightTheme}>
       <BrowserRouter>
-        <Router />
+        <ShoppingCartContextProvider>
+          <Router />
+        </ShoppingCartContextProvider>
       </BrowserRouter>
 
       <GlobalStyle />

@@ -7,7 +7,7 @@ export enum CoffeeTag {
   ESPECIAL = 'ESPECIAL',
 }
 
-export interface ICoffee {
+export interface Coffee {
   id: string
   image: string
   tags: CoffeeTag[]
