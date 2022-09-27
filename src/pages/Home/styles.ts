@@ -52,11 +52,7 @@ export const IntroList = styled.div`
   padding: 1rem 0;
 `
 
-interface IntroItemProps {
-  iconVariant: 'yellow' | 'yellow-dark' | 'base-text' | 'purple'
-}
-
-export const IntroItem = styled.span<IntroItemProps>`
+export const IntroItem = styled.span`
   color: ${($props) => $props.theme['base-text']};
 
   font-size: 1rem;
@@ -64,17 +60,6 @@ export const IntroItem = styled.span<IntroItemProps>`
   display: flex;
   align-items: center;
   gap: 0.75rem;
-
-  svg {
-    padding: 0.5rem;
-    border-radius: 9999px;
-
-    width: 2rem;
-    height: 2rem;
-
-    color: ${(props) => props.theme.background};
-    background-color: ${(props) => props.theme[`${props.iconVariant}`]};
-  }
 `
 
 export const CoffeeList = styled.div`

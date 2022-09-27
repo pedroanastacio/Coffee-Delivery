@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { useFormContext } from 'react-hook-form'
 
 import { PaymenthMethodTypes } from '../../../..'
@@ -6,8 +7,7 @@ import { RadioButtonContainer } from './styles'
 
 interface RadioButtonProps {
   value: PaymenthMethodTypes
-  // eslint-disable-next-line no-undef
-  icon: JSX.Element
+  icon: ReactNode
 }
 
 export function RadioButton({ value, icon }: RadioButtonProps) {
@@ -19,7 +19,7 @@ export function RadioButton({ value, icon }: RadioButtonProps) {
       <div>
         <>
           {icon}
-          {value}
+          {value.toUpperCase()}
         </>
       </div>
     </RadioButtonContainer>

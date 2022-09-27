@@ -13,9 +13,18 @@ import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
 import { Navigate, useNavigate } from 'react-router-dom'
 
 export enum PaymenthMethodTypes {
-  CARTAO_DE_CREDITO = 'CARTÃO DE CRÉDITO',
-  CARTAO_DE_DEBITO = 'CARTÃO DE DÉBITO',
-  DINHEIRO = 'DINHEIRO',
+  CARTAO_DE_CREDITO = 'Cartão de Crédito',
+  CARTAO_DE_DEBITO = 'Cartão de Débito',
+  DINHEIRO = 'Dinheiro',
+}
+
+export interface DeliveryDataType {
+  street: string
+  number: string
+  neighborhood: string
+  city: string
+  uf: string
+  paymentMethod: string
 }
 
 const newOrderFormValidationSchema = zod.object({
@@ -75,12 +84,12 @@ export function Checkout() {
         city: data.city,
         uf: data.uf,
         paymentMethod: data.paymentMethod,
-      },
+      } as DeliveryDataType,
     })
   }
 
   if (shoppingCartIsEmpty) {
-    return <Navigate to="/" />
+    return <Navigate to="/" replace />
   }
 
   return (

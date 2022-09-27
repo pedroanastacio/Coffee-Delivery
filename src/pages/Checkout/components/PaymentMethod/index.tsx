@@ -6,12 +6,7 @@ import { PaymenthMethodTypes } from '../..'
 import { ValidationErrorMessage } from '../../../../components/ValidationErrorMessage'
 import { RadioButton } from './components/RadioButton'
 
-import {
-  PaymentMethodRadioButton,
-  Header,
-  PaymentMethodContainer,
-  PaymentMethods,
-} from './styles'
+import { Header, PaymentMethodContainer, PaymentMethods } from './styles'
 
 export function PaymentMethod() {
   const {

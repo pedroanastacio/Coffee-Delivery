@@ -1,7 +1,7 @@
 import { Coffee, Package, ShoppingCart, Timer } from 'phosphor-react'
 
 import { COFFEES } from '../../api/coffees'
-
+import { RoundedIcon } from '../../components/RoundedIcon'
 import { CoffeeCard } from './components/CoffeeCard'
 
 import {
@@ -27,24 +27,36 @@ export function Home() {
           </div>
 
           <IntroList>
-            <IntroItem iconVariant="yellow-dark">
-              <ShoppingCart size={16} weight="fill" />
+            <IntroItem>
+              <RoundedIcon
+                variant="yellow-dark"
+                icon={<ShoppingCart size={16} weight="fill" />}
+              />
               Compra simples e segura
             </IntroItem>
 
-            <IntroItem iconVariant="base-text">
-              <Package size={16} weight="fill" />
+            <IntroItem>
+              <RoundedIcon
+                variant="base-text"
+                icon={<Package size={16} weight="fill" />}
+              />
               Embalagem mantém o café intacto
             </IntroItem>
 
-            <IntroItem iconVariant="yellow">
-              <Timer size={16} weight="fill" />
+            <IntroItem>
+              <RoundedIcon
+                variant="yellow"
+                icon={<Timer size={16} weight="fill" />}
+              />
               Entrega rápida e rastreada
             </IntroItem>
 
-            <IntroItem iconVariant="purple">
-              <Coffee size={16} weight="fill" /> O café chega fresquinho até
-              você
+            <IntroItem>
+              <RoundedIcon
+                variant="purple"
+                icon={<Coffee size={16} weight="fill" />}
+              />
+              O café chega fresquinho até você
             </IntroItem>
           </IntroList>
         </div>
