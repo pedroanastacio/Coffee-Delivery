@@ -1,7 +1,8 @@
-import { ChangeEvent, FormEvent, useContext, useState } from 'react'
-import { Minus, Plus, ShoppingCart } from 'phosphor-react'
+import { FormEvent, useContext, useState } from 'react'
+import { ShoppingCart } from 'phosphor-react'
 
 import { CoffeeTag } from '../../../../interfaces/Coffee'
+import { AmountInput } from '../../../../components/AmountInput'
 import { ShoppingCartContext } from '../../../../contexts/ShoppingCartContext'
 import { currency } from '../../../../utils/currency'
 
@@ -23,8 +24,8 @@ interface CoffeeCardProps {
   price: number
 }
 
-const COFFEES_AMOUNT_MIN = 1
-const COFFEES_AMOUNT_MAX = 10
+export const COFFEES_AMOUNT_MIN = 1
+export const COFFEES_AMOUNT_MAX = 10
 
 export function CoffeeCard({
   id,
@@ -37,32 +38,23 @@ export function CoffeeCard({
   const { addNewItem } = useContext(ShoppingCartContext)
   const [coffeesAmount, setCoffeesAmount] = useState<number>(1)
 
-  function handleCoffeesAmountChange(event: ChangeEvent<HTMLInputElement>) {
-    event.target.setCustomValidity('')
-    setCoffeesAmount(event.target.valueAsNumber)
+  function onCoffeesAmountChange(amount: number) {
+    setCoffeesAmount(amount)
   }
 
-  function handleDecrementCoffeesAmount() {
-    if (coffeesAmount > 1) {
-      setCoffeesAmount((state) => state - 1)
-    }
-  }
-
-  function handleIncrementCoffeesAmount() {
-    if (coffeesAmount < 10) {
-      setCoffeesAmount((state) => state + 1)
-    }
+  function onCoffeesAmountChangeByStep(value: number) {
+    setCoffeesAmount((state) => state + value)
   }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
 
-    addNewItem({ id, amount: coffeesAmount })
+    addNewItem({ id, name, image, price, amount: coffeesAmount })
   }
 
   return (
     <CoffeeCardContainer>
-      <img src={image} alt="" />
+      <img src={image} alt={`Xícara de ${name}`} />
 
       <Tags>
         {tags.map((tag) => (
@@ -80,23 +72,15 @@ export function CoffeeCard({
         </Price>
 
         <BuyForm onSubmit={handleSubmit} action="">
-          <div>
-            <button type="button" onClick={handleDecrementCoffeesAmount}>
-              <Minus size={14} />
-            </button>
-            <input
-              id="coffeesAmount"
-              placeholder="1"
-              type="number"
-              min={COFFEES_AMOUNT_MIN}
-              max={COFFEES_AMOUNT_MAX}
-              value={coffeesAmount}
-              onChange={handleCoffeesAmountChange}
-            />
-            <button type="button" onClick={handleIncrementCoffeesAmount}>
-              <Plus size={14} />
-            </button>
-          </div>
+          <AmountInput
+            id="coffesAmount"
+            amount={coffeesAmount}
+            min={COFFEES_AMOUNT_MIN}
+            max={COFFEES_AMOUNT_MAX}
+            step={1}
+            setAmount={onCoffeesAmountChange}
+            setAmountByStep={onCoffeesAmountChangeByStep}
+          />
 
           <AddToCartButton>
             <ShoppingCart size={22} weight="fill" />

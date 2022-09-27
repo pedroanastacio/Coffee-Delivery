@@ -1,6 +1,9 @@
 import { createContext, PropsWithChildren, useEffect, useReducer } from 'react'
 import {
   addNewItemAction,
+  changeItemAmountAction,
+  changeItemAmountByStepAction,
+  emptyCartAction,
   removeItemAction,
 } from '../reducers/shoppingCart/actions'
 
@@ -9,9 +12,17 @@ import { Item, shoppingCartReducer } from '../reducers/shoppingCart/reducer'
 interface ShoppingCartContextType {
   items: Item[]
   totalItems: number
+  DELIVERY_CHARGE: number
+  orderValue: number
+  orderValueWithCharges: number
   addNewItem: (item: Item) => void
-  removeItem: (itemId: string) => void
+  removeItem: (id: string) => void
+  changeAmount: (id: string, amount: number) => void
+  changeAmountByStep: (id: string, amount: number) => void
+  emptyCart: () => void
 }
+
+const DELIVERY_CHARGE = 3.5
 
 export const ShoppingCartContext = createContext({} as ShoppingCartContextType)
 
@@ -40,12 +51,32 @@ export function ShoppingCartContextProvider({ children }: PropsWithChildren) {
 
   const totalItems = items.length
 
+  const orderValue = items.reduce(calculateTotalPrice, 0)
+
+  const orderValueWithCharges = orderValue + DELIVERY_CHARGE
+
+  function calculateTotalPrice(total: number, item: Item) {
+    return total + item.price * item.amount
+  }
+
   function addNewItem(item: Item) {
     dispatch(addNewItemAction(item))
   }
 
-  function removeItem(itemId: string) {
-    dispatch(removeItemAction(itemId))
+  function removeItem(id: string) {
+    dispatch(removeItemAction(id))
+  }
+
+  function changeAmount(id: string, amount: number) {
+    dispatch(changeItemAmountAction(id, amount))
+  }
+
+  function changeAmountByStep(id: string, amount: number) {
+    dispatch(changeItemAmountByStepAction(id, amount))
+  }
+
+  function emptyCart() {
+    dispatch(emptyCartAction())
   }
 
   useEffect(() => {
@@ -62,8 +93,14 @@ export function ShoppingCartContextProvider({ children }: PropsWithChildren) {
       value={{
         items,
         totalItems,
+        DELIVERY_CHARGE,
+        orderValue,
+        orderValueWithCharges,
         addNewItem,
         removeItem,
+        changeAmount,
+        changeAmountByStep,
+        emptyCart,
       }}
     >
       {children}

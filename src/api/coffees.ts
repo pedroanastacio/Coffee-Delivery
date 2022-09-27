@@ -1,10 +1,8 @@
-import { v4 as uuidv4 } from 'uuid'
-
 import { CoffeeTag, Coffee } from '../interfaces/Coffee'
 
 export const COFFEES = [
   {
-    id: uuidv4(),
+    id: '1',
     image: '/src/assets/expresso.png',
     tags: [CoffeeTag.TRADICIONAL],
     name: 'Expresso',
@@ -12,7 +10,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '2',
     image: '/src/assets/americano.png',
     tags: [CoffeeTag.TRADICIONAL],
     name: 'Expresso Americano',
@@ -20,7 +18,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '3',
     image: '/src/assets/expresso-cremoso.png',
     tags: [CoffeeTag.TRADICIONAL],
     name: 'Expresso Cremoso',
@@ -28,7 +26,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '4',
     image: '/src/assets/cafe-gelado.png',
     tags: [CoffeeTag.TRADICIONAL, CoffeeTag.GELADO],
     name: 'Expresso Gelado',
@@ -36,7 +34,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '5',
     image: '/src/assets/cafe-com-leite.png',
     tags: [CoffeeTag.TRADICIONAL, CoffeeTag.COM_LEITE],
     name: 'Café com Leite',
@@ -44,7 +42,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '6',
     image: '/src/assets/latte.png',
     tags: [CoffeeTag.TRADICIONAL, CoffeeTag.COM_LEITE],
     name: 'Latte',
@@ -53,7 +51,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '7',
     image: '/src/assets/capuccino.png',
     tags: [CoffeeTag.TRADICIONAL, CoffeeTag.COM_LEITE],
     name: 'Capuccino',
@@ -62,7 +60,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '8',
     image: '/src/assets/macchiato.png',
     tags: [CoffeeTag.TRADICIONAL, CoffeeTag.COM_LEITE],
     name: 'Macchiato',
@@ -71,7 +69,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '9',
     image: '/src/assets/mocaccino.png',
     tags: [CoffeeTag.TRADICIONAL, CoffeeTag.COM_LEITE],
     name: 'Moccacino',
@@ -79,7 +77,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '10',
     image: '/src/assets/chocolate-quente.png',
     tags: [CoffeeTag.ESPECIAL, CoffeeTag.COM_LEITE],
     name: 'Chocolate Quente',
@@ -87,7 +85,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '11',
     image: '/src/assets/cubano.png',
     tags: [CoffeeTag.ESPECIAL, CoffeeTag.ALCOÓLICO, CoffeeTag.GELADO],
     name: 'Cubano',
@@ -96,7 +94,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '12',
     image: '/src/assets/havaiano.png',
     tags: [CoffeeTag.ESPECIAL],
     name: 'Havaiano',
@@ -104,7 +102,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '13',
     image: '/src/assets/arabe.png',
     tags: [CoffeeTag.ESPECIAL],
     name: 'Árabe',
@@ -112,7 +110,7 @@ export const COFFEES = [
     price: 9.9,
   },
   {
-    id: uuidv4(),
+    id: '14',
     image: '/src/assets/irlandes.png',
     tags: [CoffeeTag.ESPECIAL, CoffeeTag.ALCOÓLICO],
     name: 'Irlandês',

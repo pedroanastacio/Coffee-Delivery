@@ -1,3 +1,13 @@
+import { useLocation } from 'react-router-dom'
+
+import { SuccessContainer } from './styles'
+
 export function Success() {
-  return <h1>Success</h1>
+  const { state } = useLocation()
+
+  return (
+    <SuccessContainer>
+      <p>{state.street}</p>
+    </SuccessContainer>
+  )
 }

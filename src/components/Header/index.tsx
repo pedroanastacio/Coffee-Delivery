@@ -1,5 +1,5 @@
 import { MapPin, ShoppingCart } from 'phosphor-react'
-import { useContext } from 'react'
+import { useContext, MouseEvent } from 'react'
 import { NavLink } from 'react-router-dom'
 
 import { ShoppingCartContext } from '../../contexts/ShoppingCartContext'
@@ -10,6 +10,16 @@ import { HeaderContainer, Content, Location } from './styles'
 export function Header() {
   const { totalItems } = useContext(ShoppingCartContext)
 
+  const shoppingCartIsEmpty = totalItems === 0
+
+  function handleShoppingCartEmptyClick(
+    event: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>,
+  ) {
+    event.preventDefault()
+
+    alert('Seu carrinho de compras está vazio!')
+  }
+
   return (
     <HeaderContainer>
       <Content>
@@ -18,13 +28,23 @@ export function Header() {
         <div>
           <Location>
             <MapPin size={22} weight="fill" />
-            Porto Alegre, RS
+            Patos de Minas, MG
           </Location>
 
-          <NavLink to="/checkout" title="Carrinho">
-            <ShoppingCart size={22} weight="fill" />
-            <span>{totalItems}</span>
-          </NavLink>
+          {shoppingCartIsEmpty ? (
+            <NavLink
+              to="/checkout"
+              title="Carrinho"
+              onClick={(e) => handleShoppingCartEmptyClick(e)}
+            >
+              <ShoppingCart size={22} weight="fill" />
+            </NavLink>
+          ) : (
+            <NavLink to="/checkout" title="Carrinho">
+              <ShoppingCart size={22} weight="fill" />
+              <span>{totalItems}</span>
+            </NavLink>
+          )}
         </div>
       </Content>
     </HeaderContainer>

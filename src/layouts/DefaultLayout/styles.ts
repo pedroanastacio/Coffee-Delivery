@@ -8,7 +8,7 @@ export const LayoutContainer = styled.div`
 
   > header + * {
     max-width: 72rem;
-    padding: 0 1rem;
+    padding: 0 1rem 2rem 1rem;
     align-self: center;
   }
 `

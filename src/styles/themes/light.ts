@@ -17,4 +17,6 @@ export const lightTheme = {
   'purple-light': '#EBE5F9',
   purple: '#8047F8',
   'purple-dark': '#4B2995',
+
+  danger: '#F75A68',
 }
