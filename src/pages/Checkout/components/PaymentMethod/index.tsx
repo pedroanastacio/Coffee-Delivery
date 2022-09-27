@@ -4,6 +4,7 @@ import { useFormContext } from 'react-hook-form'
 
 import { PaymenthMethodTypes } from '../..'
 import { ValidationErrorMessage } from '../../../../components/ValidationErrorMessage'
+import { RadioButton } from './components/RadioButton'
 
 import {
   PaymentMethodRadioButton,
@@ -33,41 +34,20 @@ export function PaymentMethod() {
 
       <div>
         <PaymentMethods>
-          <PaymentMethodRadioButton>
-            <input
-              type="radio"
-              {...register('paymentMethod')}
-              value={PaymenthMethodTypes.CARTAO_DE_CREDITO}
-            />
-            <div>
-              <CreditCard size={16} />
-              {PaymenthMethodTypes.CARTAO_DE_CREDITO}
-            </div>
-          </PaymentMethodRadioButton>
+          <RadioButton
+            value={PaymenthMethodTypes.CARTAO_DE_CREDITO}
+            icon={<CreditCard size={16} />}
+          />
 
-          <PaymentMethodRadioButton>
-            <input
-              type="radio"
-              {...register('paymentMethod')}
-              value={PaymenthMethodTypes.CARTAO_DE_DEBITO}
-            />
-            <div>
-              <Bank size={16} />
-              {PaymenthMethodTypes.CARTAO_DE_DEBITO}
-            </div>
-          </PaymentMethodRadioButton>
+          <RadioButton
+            value={PaymenthMethodTypes.CARTAO_DE_DEBITO}
+            icon={<Bank size={16} />}
+          />
 
-          <PaymentMethodRadioButton>
-            <input
-              type="radio"
-              {...register('paymentMethod')}
-              value={PaymenthMethodTypes.DINHEIRO}
-            />
-            <div>
-              <Money size={16} />
-              {PaymenthMethodTypes.DINHEIRO}
-            </div>
-          </PaymentMethodRadioButton>
+          <RadioButton
+            value={PaymenthMethodTypes.DINHEIRO}
+            icon={<Money size={16} />}
+          />
         </PaymentMethods>
 
         {errors.paymentMethod && (
