@@ -78,7 +78,7 @@ export const IntroItem = styled.span<IntroItemProps>`
 `
 
 export const CoffeeList = styled.div`
-  padding: 2rem 0;
+  padding-top: 2rem;
 
   display: flex;
   flex-direction: column;

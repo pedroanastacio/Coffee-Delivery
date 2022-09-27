@@ -3,6 +3,8 @@ import styled from 'styled-components'
 export const CheckoutContainer = styled.main`
   width: 100%;
 
+  padding-top: 2.5rem;
+
   form {
     display: grid;
     grid-template-columns: 0.59fr 0.41fr;
