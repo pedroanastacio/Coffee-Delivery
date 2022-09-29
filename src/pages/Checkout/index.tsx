@@ -4,7 +4,7 @@ import * as zod from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { FormProvider, useForm } from 'react-hook-form'
 
-import { DeliveryAdress } from './components/DeliveryAdress'
+import { DeliveryAddress } from './components/DeliveryAddress'
 import { PaymentMethod } from './components/PaymentMethod'
 import { SelectedCoffees } from './components/SelectedCoffees'
 
@@ -100,7 +100,7 @@ export function Checkout() {
             <h3>Complete o seu pedido</h3>
 
             <CheckoutCardContainer>
-              <DeliveryAdress />
+              <DeliveryAddress />
 
               <PaymentMethod />
             </CheckoutCardContainer>

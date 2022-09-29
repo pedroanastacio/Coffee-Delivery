@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const DeliveryAdressContainer = styled.div`
+export const DeliveryAddressContainer = styled.div`
   padding: 2.5rem;
   border-radius: 6px;
 
