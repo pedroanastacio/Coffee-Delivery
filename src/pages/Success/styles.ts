@@ -33,6 +33,12 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 2.5rem;
+
+  img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 `
 
 export const DeliveryData = styled.div`

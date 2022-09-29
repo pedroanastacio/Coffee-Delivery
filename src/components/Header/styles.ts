@@ -18,6 +18,7 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
 
   max-width: 72rem;
   padding: 0 1rem;
@@ -80,5 +81,9 @@ export const Location = styled.span`
 
   svg {
     color: ${(props) => props.theme.purple};
+  }
+
+  @media only screen and (max-width: 300px) {
+    display: none;
   }
 `
