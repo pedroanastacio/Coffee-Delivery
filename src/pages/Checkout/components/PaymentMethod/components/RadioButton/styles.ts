@@ -42,4 +42,9 @@ export const RadioButtonContainer = styled.label`
       background: ${(props) => props.theme['base-hover']};
     }
   }
+
+  @media only screen and (max-width: 576px) {
+    width: 100%;
+    align-self: center;
+  }
 `

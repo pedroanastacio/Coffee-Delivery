@@ -33,6 +33,12 @@ export const SelectedCoffeeContainer = styled.li`
 
     color: ${(props) => props.theme['base-text']};
   }
+
+  @media only screen and (max-width: 300px) {
+    img {
+      display: none;
+    }
+  }
 `
 
 export const Actions = styled.div`

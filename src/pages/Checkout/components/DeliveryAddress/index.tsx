@@ -7,12 +7,11 @@ import { ValidationErrorMessage } from '../../../../components/ValidationErrorMe
 import { replaceNonDigits } from '../../../../utils/replaceNonDigits'
 
 import {
-  Col,
   DeliveryAddressContainer,
-  Row,
   Grid,
   Header,
   OptionalInput,
+  Field,
 } from './styles'
 
 export function DeliveryAddress() {
@@ -70,106 +69,101 @@ export function DeliveryAddress() {
       </Header>
 
       <Grid>
-        <Row>
-          <Col size={0.356}>
-            <Controller
-              control={control}
-              name="cep"
-              render={({ field }) => (
-                <InputMask {...field} mask="99999-999" placeholder="CEP" />
-              )}
-            />
-            {errors.cep && (
-              <ValidationErrorMessage>
-                {errors.cep.message as string}
-              </ValidationErrorMessage>
+        <Field grid-area="cep">
+          <Controller
+            control={control}
+            name="cep"
+            render={({ field }) => (
+              <InputMask {...field} mask="99999-999" placeholder="CEP" />
             )}
-          </Col>
-        </Row>
+          />
+          {errors.cep && (
+            <ValidationErrorMessage>
+              {errors.cep.message as string}
+            </ValidationErrorMessage>
+          )}
+        </Field>
 
-        <Row>
-          <Col size={1}>
-            <input
-              type="text"
-              id="street"
-              placeholder="Rua"
-              {...register('street')}
-            />
-            {errors.street && (
-              <ValidationErrorMessage>
-                {errors.street.message as string}
-              </ValidationErrorMessage>
-            )}
-          </Col>
-        </Row>
+        <Field grid-area="street">
+          <input
+            type="text"
+            id="street"
+            placeholder="Rua"
+            {...register('street')}
+          />
+          {errors.street && (
+            <ValidationErrorMessage>
+              {errors.street.message as string}
+            </ValidationErrorMessage>
+          )}
+        </Field>
 
-        <Row>
-          <Col size={1}>
-            <input
-              type="text"
-              id="number"
-              placeholder="Número"
-              {...register('number')}
-            />
-            {errors.number && (
-              <ValidationErrorMessage>
-                {errors.number.message as string}
-              </ValidationErrorMessage>
-            )}
-          </Col>
-          <Col size={1.74}>
-            <OptionalInput>
-              <input
-                id="complement"
-                placeholder="Complemento"
-                className="inputComplement"
-                {...register('complement')}
-              />
-              {errors.complement && (
-                <ValidationErrorMessage>
-                  {errors.complement.message as string}
-                </ValidationErrorMessage>
-              )}
-            </OptionalInput>
-          </Col>
-        </Row>
+        <Field grid-area="number">
+          <input
+            type="text"
+            id="number"
+            placeholder="Número"
+            {...register('number')}
+          />
+          {errors.number && (
+            <ValidationErrorMessage>
+              {errors.number.message as string}
+            </ValidationErrorMessage>
+          )}
+        </Field>
 
-        <Row>
-          <Col size={3.33}>
+        <Field grid-area="complement">
+          <OptionalInput>
             <input
-              type="text"
-              id="neighborhood"
-              placeholder="Bairro"
-              {...register('neighborhood')}
+              id="complement"
+              placeholder="Complemento"
+              className="inputComplement"
+              {...register('complement')}
             />
-            {errors.neighborhood && (
-              <ValidationErrorMessage>
-                {errors.neighborhood.message as string}
-              </ValidationErrorMessage>
-            )}
-          </Col>
-          <Col size={4.6}>
-            <input
-              type="text"
-              id="city"
-              placeholder="Cidade"
-              {...register('city')}
-            />
-            {errors.city && (
-              <ValidationErrorMessage>
-                {errors.city.message as string}
-              </ValidationErrorMessage>
-            )}
-          </Col>
-          <Col size={1}>
-            <input type="text" id="uf" placeholder="UF" {...register('uf')} />
-            {errors.uf && (
-              <ValidationErrorMessage>
-                {errors.uf.message as string}
-              </ValidationErrorMessage>
-            )}
-          </Col>
-        </Row>
+          </OptionalInput>
+          {errors.complement && (
+            <ValidationErrorMessage>
+              {errors.complement.message as string}
+            </ValidationErrorMessage>
+          )}
+        </Field>
+
+        <Field grid-area="neighborhood">
+          <input
+            type="text"
+            id="neighborhood"
+            placeholder="Bairro"
+            {...register('neighborhood')}
+          />
+          {errors.neighborhood && (
+            <ValidationErrorMessage>
+              {errors.neighborhood.message as string}
+            </ValidationErrorMessage>
+          )}
+        </Field>
+
+        <Field grid-area="city">
+          <input
+            type="text"
+            id="city"
+            placeholder="Cidade"
+            {...register('city')}
+          />
+          {errors.city && (
+            <ValidationErrorMessage>
+              {errors.city.message as string}
+            </ValidationErrorMessage>
+          )}
+        </Field>
+
+        <Field grid-area="uf">
+          <input type="text" id="uf" placeholder="UF" {...register('uf')} />
+          {errors.uf && (
+            <ValidationErrorMessage>
+              {errors.uf.message as string}
+            </ValidationErrorMessage>
+          )}
+        </Field>
       </Grid>
     </DeliveryAddressContainer>
   )

@@ -27,17 +27,29 @@ export const Title = styled.div`
 
     color: ${(props) => props.theme['base-subtitle']};
   }
+
+  @media only screen and (max-width: 992px) {
+    h1,
+    p {
+      text-align: center;
+    }
+  }
 `
 
 export const Content = styled.div`
   display: flex;
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: 2rem;
 
   img {
     max-width: 100%;
     height: auto;
     object-fit: contain;
+  }
+
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+    align-items: center;
   }
 `
 

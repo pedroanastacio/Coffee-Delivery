@@ -63,21 +63,30 @@ export const Grid = styled.div`
   display: grid;
   row-gap: 1rem;
   column-gap: 0.75rem;
+  grid-template-columns: 0.8fr 1fr 0.25fr;
+  grid-template-areas:
+    'cep . .'
+    'street street street'
+    'number complement complement'
+    'neighborhood city uf';
+
+  @media only screen and (max-width: 576px) {
+    grid-template-columns: 0.8fr 1fr 0.45fr;
+    grid-template-areas:
+      'cep . .'
+      'street street street'
+      'number complement complement'
+      'neighborhood neighborhood neighborhood'
+      'city city uf';
+  }
 `
 
-export const Row = styled.div`
-  display: flex;
-  gap: 0.75rem;
-`
-
-interface ColProps {
-  size: number
+interface FieldProps {
+  'grid-area': string
 }
 
-export const Col = styled.div<ColProps>`
-  flex: ${(props) => props.size};
-
-  position: relative;
+export const Field = styled.div<FieldProps>`
+  grid-area: ${(props) => props['grid-area']};
 `
 
 export const OptionalInput = styled.div`

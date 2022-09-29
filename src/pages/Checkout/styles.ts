@@ -18,6 +18,15 @@ export const CheckoutContainer = styled.main`
 
       margin-bottom: 0.9375rem;
     }
+
+    @media only screen and (max-width: 992px) {
+      display: flex;
+      flex-direction: column;
+      max-width: 45rem;
+      gap: 2.5rem;
+
+      margin: auto;
+    }
   }
 `
 export const CheckoutCardContainer = styled.div`

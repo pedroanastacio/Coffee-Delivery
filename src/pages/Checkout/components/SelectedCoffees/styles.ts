@@ -54,6 +54,11 @@ export const ConfirmOrderButton = styled.button`
 
   font-size: 0.875rem;
 
+  width: 100%;
+  max-width: 23rem;
+
+  align-self: center;
+
   cursor: pointer;
 
   &:hover {
