@@ -45,9 +45,9 @@ https://user-images.githubusercontent.com/45208073/193150761-d995fc3c-8455-4072-
     <img align="center" alt="Styled Components" height="30" width="40" src="https://cdn.worldvectorlogo.com/logos/styled-components-1.svg">
    </a>
    <a href="https://react-hook-form.com/">
-    <img align="center" alt="Styled Components" height="30" width="30" src="https://avatars.githubusercontent.com/u/53986236?s=200&v=4">
+    <img align="center" alt="React Hook Form" height="30" width="30" src="https://avatars.githubusercontent.com/u/53986236?s=200&v=4">
    </a>
    <a href="https://github.com/colinhacks/zod">
-    <img align="center" alt="Styled Components" height="30" width="40" src="https://github.com/colinhacks/zod/blob/master/logo.svg">
+    <img align="center" alt="Zod" height="30" width="40" src="https://github.com/colinhacks/zod/blob/master/logo.svg">
    </a>
   </div>
