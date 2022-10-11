@@ -32,22 +32,22 @@ https://user-images.githubusercontent.com/45208073/193150761-d995fc3c-8455-4072-
   
  ## :zap: Technologies
   <div style="display: inline_block"><br>
-   <a href="https://www.typescriptlang.org/">
+   <a href="https://www.typescriptlang.org/" title="TypeScript">
      <img align="center" alt="TypeScript" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">
    </a>
-   <a href="https://reactjs.org/">
+   <a href="https://reactjs.org/" title="ReactJS">
     <img align="center" alt="ReactJS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg">
    </a>
-    <a href="https://vitejs.dev/">
+    <a href="https://vitejs.dev/" title="Vite">
     <img align="center" alt="Vite" height="30" width="40" src="https://www.svgrepo.com/show/354521/vitejs.svg">
    </a>
-   <a href="https://styled-components.com/">
+   <a href="https://styled-components.com/" title="Styled Components">
     <img align="center" alt="Styled Components" height="30" width="40" src="https://cdn.worldvectorlogo.com/logos/styled-components-1.svg">
    </a>
-   <a href="https://react-hook-form.com/">
+   <a href="https://react-hook-form.com/" title="React Hook Form">
     <img align="center" alt="React Hook Form" height="40" width="40" src="https://avatars.githubusercontent.com/u/53986236?s=200&v=4">
    </a>
-   <a href="https://github.com/colinhacks/zod">
+   <a href="https://github.com/colinhacks/zod" title="Zod">
     <img align="center" alt="Zod" height="35" width="35" src="https://github.com/colinhacks/zod/blob/master/logo.svg">
    </a>
   </div>
